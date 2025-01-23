@@ -55,6 +55,12 @@ jobs:
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
 
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: ./alist-web/dist
+          
       - name: Commit dist
         run: |
           cd web-dist
@@ -74,3 +80,4 @@ jobs:
           directory: web-dist
           repository: alist-org/web-dist
           force: true
+
