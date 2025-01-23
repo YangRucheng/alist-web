@@ -74,3 +74,9 @@ jobs:
           directory: web-dist
           repository: alist-org/web-dist
           force: true
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: ./dist
